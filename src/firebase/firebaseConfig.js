@@ -1,24 +1,26 @@
-// src/firebase/firebaseConfig.js
+// src/firebase/firebaseConfig.js (Versi Aman dengan Environment Variables)
 
 import { initializeApp } from "firebase/app";
-// 1. KEMBALIKAN impor getAuth
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// Ini adalah konfigurasi BARU Anda yang sudah benar dan kita hardcode untuk sementara
+// =========================================================================================
+// PERUBAHAN UNTUK KEAMANAN
+// KETERANGAN: Konfigurasi sekarang dibaca dari Environment Variables (import.meta.env)
+//             sehingga tidak ada kunci rahasia yang tersimpan di dalam kode.
+// =========================================================================================
 const firebaseConfig = {
-  apiKey: "AIzaSyCjZM_HyecPa_GZjja_gLQfFVyMYT3kXWk",
-  authDomain: "ospeky-project.firebaseapp.com",
-  projectId: "ospeky-project",
-  storageBucket: "ospeky-project.firebasestorage.app",
-  messagingSenderId: "79969410779",
-  appId: "1:79969410779:web:2a104c41a3ada22b8636fe"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 // Inisialisasi Firebase
 const app = initializeApp(firebaseConfig);
 
-// 2. KEMBALIKAN ekspor auth. Kode ini sekarang akan berhasil
-// karena API di Google Cloud sudah Anda aktifkan.
+// Ekspor auth dan db
 export const auth = getAuth(app);
 export const db = getFirestore(app);
