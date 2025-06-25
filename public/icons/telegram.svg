@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="153.844mm" height="153.844mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 15384 15384"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil4 {fill:none}
+    .fil0 {fill:#32AADE}
+    .fil2 {fill:white}
+    .fil1 {fill:black;fill-opacity:0.250980}
+    .fil3 {fill:#FEFEFE;fill-opacity:0.309804}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_2991478646656">
+   <path class="fil0" d="M4309 2083l6766 0c1225,0 2227,1002 2227,2226l0 6766c0,1225 -1002,2227 -2227,2227l-6766 0c-1224,0 -2226,-1002 -2226,-2227l0 -6766c0,-1224 1002,-2226 2226,-2226z"/>
+   <path class="fil1" d="M8782 6751l-2621 1742c0,0 -481,421 -1027,362 -545,-60 -1512,-500 -1512,-500 0,0 -265,-174 -105,-330 160,-156 6768,-2864 6768,-2864 0,0 366,-128 559,-13 192,114 91,577 36,893 -55,316 -687,4537 -687,4537 0,0 -82,650 -431,710 -348,59 -655,-179 -655,-179l-2250 -1503c0,0 -229,-344 -45,-554 183,-211 2176,-2085 2176,-2085 0,0 179,-250 110,-305 -69,-55 -316,89 -316,89z"/>
+   <path class="fil2" d="M8945 6621l-2621 1741c0,0 -481,422 -1026,362 -546,-60 -1513,-499 -1513,-499 0,0 -265,-175 -105,-330 160,-156 6768,-2864 6768,-2864 0,0 367,-129 559,-14 192,115 92,577 37,894 -55,316 -688,4536 -688,4536 0,0 -82,651 -430,710 -349,60 -656,-179 -656,-179l-2249 -1502c0,0 -230,-344 -46,-555 183,-211 2176,-2085 2176,-2085 0,0 179,-250 110,-305 -69,-55 -316,90 -316,90z"/>
+   <path class="fil3" d="M10829 3000c852,0 1549,707 1549,1570l0 6500c0,864 -697,1570 -1549,1570l514 0c852,0 1549,-706 1549,-1570l0 -7021c0,-863 -697,-1570 -1549,-1570l-6926 0c-852,0 -1549,707 -1549,1570l0 521c0,-863 697,-1570 1549,-1570l6412 0z"/>
+  </g>
+  <rect class="fil4" width="15384" height="15384"/>
+ </g>
+</svg>

@@ -1,0 +1,127 @@
+/* src/pages/PersonalDetailsPage.css (Versi Final & Sinkron) */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.pd-page-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #f4f6f8;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.pd-header {
+  background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+  padding: 24px;
+  color: white;
+  position: relative;
+  text-align: center;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pd-back-btn {
+  position: absolute;
+  left: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.pd-back-btn img {
+  width: 32px;
+  height: 32px;
+}
+
+.pd-header-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.pd-main-edit-btn {
+  position: absolute;
+  right: 16px;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid white;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.pd-main-edit-btn.edit {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.pd-main-edit-btn.save {
+  background-color: #ffffff;
+  color: #3498db;
+}
+
+.pd-content {
+  padding: 24px 16px;
+}
+
+.welcome-banner {
+  background-color: #e8f4fd;
+  color: #2980b9;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.pd-info-card {
+  background: white;
+  border-radius: 12px;
+  padding: 8px 16px;
+  box-shadow: 0 4px 16px rgba(0, 47, 86, 0.06);
+}
+
+.pd-form-group {
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f1f5;
+}
+
+.pd-form-group.no-border {
+  border-bottom: none;
+}
+
+.pd-form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #95a5a6;
+  margin-bottom: 4px;
+}
+
+.pd-value {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.pd-input {
+  width: 100%;
+  padding: 4px 0;
+  border: none;
+  border-radius: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2c3e50;
+  font-family: 'Poppins', sans-serif;
+  background-color: transparent;
+  outline: none;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color 0.2s;
+}
+
+.pd-input:focus {
+  border-bottom-color: #3498db;
+}

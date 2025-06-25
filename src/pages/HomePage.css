@@ -1,0 +1,23 @@
+/* src/pages/HomePage.css */
+.homepage-container {
+  padding: 1rem;
+}
+
+.loading-text {
+    text-align: center;
+    padding: 2rem;
+    color: #888;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.product-grid {
+  display: grid;
+  /* Membuat 2 kolom dengan lebar yang sama */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem; /* Jarak antar kartu */
+}

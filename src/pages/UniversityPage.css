@@ -1,0 +1,155 @@
+/* frontend-customer/src/pages/UniversityPage.css */
+
+.uni-page-container {
+  background-color: #FFFFFF; /* Warna latar belakang sekarang putih */
+  min-height: 100vh;
+  padding: 0;
+}
+
+.loading-text {
+  padding: 20px;
+  text-align: center;
+}
+
+/* frontend-customer/src/pages/UniversityPage.css */
+
+/* ... style lainnya ... */
+
+.uni-page-header {
+  position: relative;
+  padding: 60px 24px 30px 24px;
+  color: white;
+
+  /* Gradasi Linear */
+  background: linear-gradient(to bottom right, #36DFF1, #E3FFAF);
+
+  /* Pattern di atas gradasi */
+  background-image: url('/public/pattern.svg'), linear-gradient(to bottom right, #36DFF1, #E3FFAF);
+  background-repeat: repeat, no-repeat;
+  background-size: auto, 100% 100vh; /* Pattern auto, gradasi full tinggi viewport */
+  background-position: center, top;
+  min-height: 250px; /* Atur tinggi minimum agar header memanjang ke bawah */
+}
+
+.back-button-uni {
+ position: absolute;
+ top: 16px;
+ left: 16px;
+ background: none;
+ border: none;
+ cursor: pointer;
+ padding: 8px;
+ z-index: 10; /* Pastikan tombol kembali tetap di atas background */
+}
+
+.back-button-uni img {
+ width: 24px;
+ height: 24px;
+}
+
+.uni-info {
+ display: flex;
+ align-items: center;
+ gap: 16px;
+ position: relative; /* Untuk mengatur z-index elemen di dalamnya jika perlu */
+}
+
+.uni-logo-large {
+ width: 60px;
+ height: 60px;
+ border-radius: 50%;
+ border: 2px solid white;
+ background-color: rgba(255, 255, 255, 0.8);
+ padding: 5px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ z-index: 5; /* Pastikan logo berada di atas background */
+}
+
+.uni-name-large {
+ font-size: 1.8rem;
+ font-weight: 700;
+ text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+ z-index: 5; /* Pastikan nama berada di atas background */
+}
+
+.uni-page-content {
+ padding: 24px;
+}
+
+
+.tabs-wrapper {
+  margin-top: -50px; /* Menyesuaikan dari -70px agar tidak terlalu tinggi */
+  
+  /* HAPUS padding kiri-kanan agar tombol bisa full-width */
+  padding: 0;
+
+  position: relative;
+  z-index: 5;
+}
+
+.tabs-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.tab-button {
+  padding: 14px 20px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  flex-grow: 1; 
+  text-align: center;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  
+}
+
+/* Tombol TIDAK AKTIF: transparan, hanya teks putih/terang */
+.tab-button:not(.active) {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Tombol AKTIF: solid putih, sudut atas melengkung */
+.tab-button.active {
+  background-color: var(--white);
+  color: var(--primary-color, #007bff);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+/* ================= KONTEN HALAMAN ================= */
+.uni-page-content {
+  background-color: var(--white);
+  padding: 24px;
+  position: relative; 
+  z-index: 4;
+  
+  /* Hapus margin-top agar tidak ada celah dengan tabs di atasnya */
+  margin-top: 0; 
+}
+
+/* Style untuk Grid Produk */
+.product-list-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+  gap: 16px;
+  /* posisi text di tengah tab */
+ 
+
+}
+
+/* Tambahkan ini di akhir file UniversityPage.css */
+/* Di dalam file UniversityPage.css */
+
+.info-text {
+  grid-column: 1 / -1;       /* rentang semua kolom */
+  justify-self: center;      /* posisikan elemen-nya di tengah grid cell */
+  text-align: center;        /* ratakan teks ke tengah */
+  padding: 40px 0;
+  color: #888;
+}
+

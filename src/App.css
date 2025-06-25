@@ -1,0 +1,13 @@
+/* src/App.css */
+
+.app-container {
+  display: flex;
+  flex-direction: column; /* Menyusun item (navbar, main, footer) secara vertikal */
+  min-height: 100vh; /* Memastikan kontainer utama setidaknya setinggi layar */
+}
+
+main {
+  flex: 1; /* Ini adalah bagian penting: membuat konten utama mengisi semua ruang kosong yang tersedia, mendorong footer ke bawah */
+  width: 100%;
+  max-width: 100%; /* Memastikan tidak ada overflow di layar mobile */
+}

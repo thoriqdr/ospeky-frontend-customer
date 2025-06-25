@@ -1,0 +1,156 @@
+/* src/pages/AddressFormPage.css (Revisi Desain 100%) */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.address-form-page-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #f4f6f8;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.address-form-header {
+  background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+  padding: 24px;
+  color: white;
+  position: relative;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.back-btn {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.back-btn img {
+  width: 32px;
+  height: 32px;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.address-form-content {
+  padding: 24px 16px;
+  margin-top: -32px;
+  position: relative;
+  z-index: 2;
+}
+
+.form-card {
+  background: white;
+  border-radius: 8px;
+  margin: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 24px rgba(0, 47, 86, 0.1);
+}
+
+.form-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  padding-bottom: 12px;
+  margin: 0 0 16px 0;
+}
+
+.form-group {
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #f0f1f5;
+}
+
+.form-group.no-border {
+  border-bottom: none;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #95a5a6;
+  margin-bottom: 2px;
+}
+
+/* GAYA INPUT SEPERTI TEKS BIASA */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 4px 0;
+  border: none;
+  border-radius: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2c3e50;
+  font-family: 'Poppins', sans-serif;
+  background-color: transparent;
+  outline: none;
+  resize: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 40px;
+}
+
+/* Tombol Aksi */
+.form-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.form-actions button {
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.form-actions button:hover {
+  opacity: 0.9;
+}
+
+.btn-delete {
+  background-color: #3498db; /* Warna Biru */
+  color: white;
+}
+
+.btn-save {
+  background-color: #2ecc71; /* Warna Hijau */
+  color: white;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Atur jarak antara checkbox dan teks */
+  font-size: 14px;
+  color: #333;
+}
+
+/* Style untuk BORDER input yang error */
+.input-error {
+  border-color: #e53e3e !important; /* Warna merah untuk border */
+}
+
+/* Style untuk TULISAN placeholder di dalam input yang error */
+.input-error::placeholder {
+  color: #e53e3e;      /* Warna merah untuk teks */
+  font-weight: 300;   /* Font tipis/light */
+  font-size: smaller;
+  opacity: 1;         /* Pastikan warnanya tidak pudar */
+}

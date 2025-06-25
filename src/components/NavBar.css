@@ -1,0 +1,59 @@
+/* src/components/Navbar.css */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.navbar-logo img {
+  height: 50px;
+  width: auto;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-button {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  color: var(--text-dark);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.navbar-button:hover {
+  transform: scale(1.05);
+}
+.navbar-button img {
+  height: 16px;
+}
+
+.menu-container { position: relative; }
+.dropdown-menu {
+  /* ... (styling dropdown tidak berubah) ... */
+}
+
+/* src/components/Navbar.css */
+
+/* ... (kode Anda yang lain) ... */
+
+/* Styling untuk indikator notifikasi di tombol Menu */
+.navbar-menu-badge {
+  position: absolute;
+  top: 6px;      /* Posisi vertikal */
+  right: 10px;   /* Posisi horizontal */
+  width: 10px;   /* Ukuran dot */
+  height: 10px;  /* Ukuran dot */
+  background-color: #e74c3c; /* Warna merah */
+  border-radius: 50%; /* Membuatnya menjadi lingkaran */
+  border: 2px solid white; /* Memberi outline putih agar terlihat di atas tombol */
+}

@@ -1,0 +1,69 @@
+/* src/components/ConfirmationPopup.css */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 15px;
+}
+.popup-content.confirmation-popup {
+  background-color: white;
+  padding: 24px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.confirmation-popup h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+.confirmation-popup p {
+  margin-bottom: 24px;
+  color: #555;
+  line-height: 1.6;
+}
+.popup-actions {
+  display: flex;
+  gap: 12px;
+}
+.popup-actions button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.popup-actions .btn-secondary {
+  background-color: #e9ecef;
+  color: #495057;
+}
+.popup-actions .btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+.popup-actions button:hover {
+  opacity: 0.9;
+}
+
+/* Tambahan untuk mode satu tombol (alert) */
+.popup-actions.single-action {
+  justify-content: center; /* Membuat tombol berada di tengah */
+}
+
+.popup-actions.single-action .btn-primary {
+  flex-grow: 0; /* Mencegah tombol meregang penuh */
+  min-width: 120px; /* Memberi lebar minimal agar tidak terlalu kecil */
+}

@@ -1,0 +1,44 @@
+/* src/components/OnboardingModal.css */
+.onboarding-modal-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex; justify-content: center; align-items: center; z-index: 2000;
+  font-family: 'Poppins', sans-serif;
+}
+.onboarding-modal-content {
+  background: white; padding: 24px; border-radius: 16px;
+  width: 90%; max-width: 450px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); text-align: center;
+}
+.onboarding-modal-content h3 {
+  font-size: 1.5rem; font-weight: 600; color: #2c3e50;
+  margin-top: 0; margin-bottom: 8px;
+}
+.onboarding-modal-content .subtitle {
+  font-size: 1rem; color: #7f8c8d; margin-bottom: 24px;
+}
+.onboarding-form { display: flex; flex-direction: column; gap: 16px; text-align: left; }
+.onboarding-form-group label {
+  display: block; font-size: 0.9rem; font-weight: 500;
+  color: #34495e; margin-bottom: 6px;
+}
+.onboarding-form-group input {
+  width: 100%; padding: 12px; border: 1px solid #bdc3c7;
+  border-radius: 8px; font-size: 1rem; box-sizing: border-box;
+}
+.onboarding-form-group input:disabled {
+  background-color: #f4f6f8; color: #7f8c8d;
+}
+.onboarding-error {
+  color: #e74c3c; font-size: 0.9rem; margin-top: 16px; min-height: 1.2em;
+}
+.onboarding-save-btn {
+  width: 100%; padding: 14px; border-radius: 12px; border: none;
+  font-size: 1rem; font-weight: 600; cursor: pointer;
+  background-color: #2ecc71; color: white; margin-top: 24px;
+  transition: background-color 0.2s;
+}
+.onboarding-save-btn:hover { background-color: #27ae60; }
+.onboarding-save-btn:disabled {
+  background-color: #bdc3c7; cursor: not-allowed;
+}

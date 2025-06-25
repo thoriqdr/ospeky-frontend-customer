@@ -1,0 +1,202 @@
+/* frontend-customer/src/components/OrderPopup.css */
+
+/* Lapisan luar semi-transparan yang menutupi seluruh layar */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  /* Properti flex dihapus */
+}
+
+/* Konten popup yang sebenarnya */
+.popup-content {
+  position: absolute; /* Membuatnya bisa diposisikan secara absolut */
+  bottom: 0;        /* Memaksa menempel di bagian bawah */
+  left: 50%;        /* Posisikan 50% dari kiri */
+  transform: translateX(-50%); /* Geser ke kiri sebesar 50% dari lebarnya sendiri agar pas di tengah */
+  
+  background-color: white;
+  width: 100%;
+  max-width: 500px;
+  padding: 24px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  animation: slide-up 0.3s ease-out;
+}
+
+/* Animasi untuk popup agar muncul dengan mulus */
+/* Kode Baru yang Benar */
+@keyframes slide-up {
+  from {
+    /* Mulai dari bawah DAN tetap di tengah secara horizontal */
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  to {
+    /* Berakhir di posisi final DAN tetap di tengah secara horizontal */
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+/* Header popup */
+.popup-header {
+  display: flex;
+  gap: 16px;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.popup-product-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.popup-product-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-product-name {
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.popup-product-price {
+  color: var(--primary-color, #007bff);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0 0 4px 0;
+}
+
+.popup-product-stock {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Pemilih jumlah */
+.popup-quantity-selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.popup-quantity-selector p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantity-controls button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background-color: #f8f9fa;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.quantity-controls span {
+  font-weight: 600;
+  min-width: 30px;
+  text-align: center;
+}
+
+/* Tombol "Masukkan Keranjang" */
+.add-to-cart-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--primary-color, #007bff);
+  color: white;
+}
+
+/* frontend-customer/src/components/OrderPopup.css */
+
+/* === GAYA BARU UNTUK SELEKSI VARIAN DI POPUP === */
+.popup-variant-section {
+  margin-top: 16px;
+  border-top: 1px solid #e9ecef;
+  padding-top: 16px;
+}
+
+.popup-variant-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #343a40;
+}
+
+.popup-variant-list {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto; /* Memungkinkan scroll horizontal jika varian banyak */
+  padding-bottom: 10px; /* Memberi ruang untuk scrollbar */
+  -webkit-overflow-scrolling: touch; /* Scrolling mulus di iOS */
+}
+
+/* Menghilangkan scrollbar visual tapi tetap fungsional */
+.popup-variant-list::-webkit-scrollbar {
+  display: none;
+}
+.popup-variant-list {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;    /* Firefox */
+}
+
+
+.popup-variant-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 8px;
+  border: 2px solid transparent; /* Border transparan agar layout tidak bergeser */
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+  flex-shrink: 0; /* Mencegah item menyusut */
+}
+
+.popup-variant-item.active {
+  border-color: var(--primary-color, #007bff); /* Border aktif */
+  background-color: #f0f7ff; /* Latar belakang sedikit berbeda saat aktif */
+}
+
+.popup-variant-item-image {
+  width: 70px; /* Ukuran gambar varian */
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.popup-variant-item-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #495057;
+  text-align: center;
+  max-width: 70px;
+  /* Mencegah teks terlalu panjang */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

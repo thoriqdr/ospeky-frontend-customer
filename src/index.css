@@ -1,0 +1,48 @@
+/* src/index.css */
+
+/* 1. Impor Font dari Google Fonts (Poppins adalah pilihan yang bagus dan modern) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* 2. Mendefinisikan Variabel Warna untuk kemudahan penggunaan */
+:root {
+  --primary-blue: #2980b9;
+  --light-gray: #f9f9f9;
+  --text-dark: #343a40;
+  --text-light: #6c757d;
+  --border-color: #e9ecef;
+  --white: #ffffff;
+}
+
+/* 3. CSS Reset - Menghilangkan gaya default browser yang tidak konsisten */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 4. Gaya Dasar untuk Body - Menerapkan font dan warna latar */
+body {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light-gray); /* Menggunakan warna dari variabel */
+  color: var(--text-dark); /* Warna teks default */
+}
+
+/* 5. Gaya Dasar untuk elemen umum lainnya */
+img {
+  max-width: 100%;
+  display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+}
+
+a {
+  text-decoration: none; /* Menghilangkan garis bawah pada link */
+  color: inherit; /* Membuat link mewarisi warna dari induknya */
+}
+
+button {
+    font-family: 'Poppins', sans-serif; /* Memastikan tombol juga menggunakan font yang sama */
+}

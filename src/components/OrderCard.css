@@ -1,0 +1,187 @@
+/* src/components/OrderCard.css (Desain Final) */
+.oc-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0, 47, 86, 0.08);
+  border: 1px solid #f0f1f5;
+  display: flex;
+  flex-direction: column;
+}
+.oc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f1f3f5;
+  margin-bottom: 12px;
+}
+.oc-status-label {
+  font-size: 0.9rem;
+  color: #868e96;
+}
+.oc-status-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.status-waiting { color: #f39c12; }
+.status-shipped { color: #2ecc71; }
+.status-completed { color: #3498db; }
+.status-cancelled { color: #e74c3c; }
+
+.oc-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.oc-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.oc-item-image {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.oc-item-info { flex-grow: 1; }
+.oc-item-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #2c3e50;
+  margin: 0 0 4px 0;
+}
+.oc-item-price-details p {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin: 2px 0;
+}
+.oc-item-price-details span {
+  font-weight: 500;
+  color: #34495e;
+}
+.oc-item-quantity {
+  font-size: 0.9rem;
+  color: #868e96;
+  font-weight: 500;
+}
+.oc-item-error {
+  font-size: 0.9rem;
+  color: #e74c3c;
+  padding: 16px 0;
+}
+
+.oc-expand-wrapper {
+  text-align: center;
+  padding-top: 12px;
+  margin-top: 12px;
+}
+.oc-expand-btn {
+  background: none;
+  border: none;
+  color: #3498db;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.oc-footer {
+  padding-top: 16px;
+  margin-top: 16px;
+  border-top: 1px solid #f1f3f5;
+}
+.oc-total-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16px;
+}
+.oc-total-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #34495e;
+}
+.oc-total-amount {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+.oc-note {
+  width: 100%;
+  text-align: center; /* Membuat teks di tengah */
+  font-size: 0.8rem; /* Sedikit memperkecil font */
+  color: #666; /* Warna abu-abu gelap, lebih lembut dari hitam */
+  margin-top: 10px; /* Memberi sedikit jarak dari atas */
+  padding: 0 10px; /* Memberi sedikit padding agar tidak menempel di tepi */
+  box-sizing: border-box;
+}
+
+.oc-note strong {
+  color: #444; /* Membuat "Note*" sedikit lebih gelap */
+}
+
+.oc-action-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  transition: background-color 0.2s;
+}
+.oc-action-button:hover { background-color: #2980b9; }
+
+/* ... tambahkan di paling bawah */
+
+.oc-countdown {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #e74c3c;
+  margin: 0 0 12px 0;
+}
+
+.oc-countdown strong {
+  font-weight: 700;
+}
+
+/* --- CSS TAMBAHAN UNTUK BAGIAN PELUNASAN --- */
+
+.oc-pelunasan-section {
+  display: flex;
+  flex-direction: column; /* Menyusun info dan tombol secara vertikal */
+  gap: 12px; /* Memberi jarak antara info sisa tagihan dan tombol */
+}
+
+.oc-pelunasan-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+}
+
+.oc-pelunasan-info span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #34495e;
+}
+
+.oc-pelunasan-info strong {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #3498db; /* Memberi warna biru pada sisa tagihan */
+}
+
+.oc-pelunasan-btn {
+  /* .oc-action-button sudah memberikan gaya dasar. */
+  /* Di sini kita bisa menimpa atau menambahkan gaya spesifik jika perlu */
+  background-color: #3498db; /* Menggunakan warna biru agar sesuai dengan teks sisa tagihan */
+}
+
+.oc-pelunasan-btn:hover {
+  background-color: #2980b9;
+}

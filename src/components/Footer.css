@@ -1,0 +1,64 @@
+/* src/components/Footer.css */
+
+.footer-container {
+  background-color: #f8f9fa; /* Warna latar belakang abu-abu sangat muda */
+  padding: 2rem 1rem; /* Jarak atas/bawah 2rem, jarak kiri/kanan 1rem */
+  color: #6c757d; /* Warna teks abu-abu */
+  text-align: left; /* Rata kiri sesuai desain */
+  border-top: 1px solid #e9ecef;
+}
+
+.footer-main {
+  margin-bottom: 2rem;
+}
+
+.footer-logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #343a40; /* Warna teks logo lebih gelap */
+  margin: 0 0 1rem 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column; /* Menyusun link secara vertikal di mobile */
+  gap: 0.75rem; /* Jarak antar link */
+}
+
+.footer-links a {
+  color: #343a40;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  padding-top: 1.5rem;
+  border-top: 1px solid #dee2e6;
+  font-size: 0.875rem; /* Font lebih kecil untuk bagian bawah */
+}
+
+.footer-bottom p {
+  margin: 0 0 1rem 0;
+  color: #6c757d;
+}
+
+.footer-sub-links {
+  display: flex;
+  gap: 1.5rem; /* Jarak antar link di bagian sub-links */
+}
+
+.footer-sub-links a {
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.footer-sub-links a:hover {
+  text-decoration: underline;
+}
+
+/* Tambahkan/ubah ini di Footer.css */

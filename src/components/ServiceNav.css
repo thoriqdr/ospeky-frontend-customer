@@ -1,0 +1,58 @@
+/* src/components/ServiceNav.css */
+
+.service-nav-container {
+    display: flex;
+    gap: 1rem; /* Jarak antar kartu */
+    padding: 1.5rem 1rem;
+    border-bottom: 8px solid var(--light-gray);
+}
+
+.service-button {
+    /* Membuat setiap kartu memiliki lebar yang sama dan mengisi ruang */
+    flex: 1;
+
+    /* Styling untuk KARTU PUTIH BESAR */
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); /* Bayangan lebih jelas */
+    
+    /* Membuat kartu menjadi persegi */
+    aspect-ratio: 1 / 1; 
+
+    /* Menengahkan konten (ikon/gambar) di dalam kartu */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.service-button:hover {
+    transform: translateY(-5px); /* Efek terangkat saat disentuh */
+}
+
+/* Styling untuk wadah ikon/gambar di dalam kartu */
+.service-icon {
+    /* Menghapus background-color */
+    background-color: transparent; 
+    
+    /* Mengatur ukuran gambar agar tidak terlalu besar di dalam kartu */
+    width: 60%; 
+    height: auto;
+    
+    /* Menghapus sisa style yang tidak perlu */
+    box-shadow: none;
+    border-radius: 0;
+}
+
+/* Memastikan gambar di dalam .service-icon pas dan tidak terpotong */
+.service-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+}
+
+/* Styling khusus untuk teks 'More' di bawah ikonnya */

@@ -1,0 +1,35 @@
+/* frontend-customer/src/components/SearchBar.css */
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Biarkan search bar mengisi ruang yang tersedia */
+  
+
+  background-color: var(--white); 
+  border-radius: 50px;          
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.035); 
+  border: none;                  
+  padding: 12px 16px;            
+
+  gap: 8px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s; /* Tambahkan transisi agar lebih halus */
+}
+
+.search-bar-container:hover {
+  /* Efek hover yang lebih modern */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+}
+
+.search-bar-placeholder {
+  color: #eaeaea;
+  font-size: 1rem;
+}

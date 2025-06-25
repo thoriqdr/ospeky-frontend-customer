@@ -1,0 +1,151 @@
+/* src/pages/AddressesPage.css (Revisi Desain 100%) */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.address-page-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #f4f6f8;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.address-page-header {
+  background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+  padding: 24px;
+  color: white;
+  position: relative;
+  text-align: center;
+}
+
+.back-btn {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.back-btn img {
+  width: 32px;
+  height: 32px;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.address-page-content {
+  padding: 24px 16px;
+  /* Tarik konten sedikit ke atas untuk overlap dengan header */
+  margin-top: -32px;
+  position: relative;
+  z-index: 2;
+}
+
+/* GAYA KARTU ALAMAT BARU */
+.address-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 20px rgba(0, 47, 86, 0.08);
+}
+
+.address-card-main-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.address-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+.address-phone {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  padding-left: 10px;
+  border-left: 1px solid #dfe4ea;
+}
+
+.address-details {
+  font-size: 0.9rem;
+  color: #34495e;
+  line-height: 1.6;
+  margin: 4px 0 16px 0;
+}
+
+.address-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.address-badge {
+  border: 1px solid #bdc3c7;
+  color: #7f8c8d;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.edit-address-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #7f8c8d;
+  padding: 4px;
+}
+
+.edit-address-btn .material-icons-outlined {
+  font-size: 22px;
+}
+
+/* GAYA TOMBOL TAMBAH ALAMAT BARU */
+.add-address-button {
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  background-color: #ffffff;
+  color: #3498db;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 20px rgba(0, 47, 86, 0.08);
+  transition: all 0.2s ease-in-out;
+}
+
+.add-address-button:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+}
+
+.alamat-info {
+  text-align: center;
+  color: #7f8c8d;
+  margin: 20px 0;
+}
+
+.address-card.selectable {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.address-card.selectable:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 47, 86, 0.1);
+}

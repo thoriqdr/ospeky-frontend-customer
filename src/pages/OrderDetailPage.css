@@ -1,0 +1,98 @@
+.od-page-container { max-width: 500px; margin: 0 auto; background-color: #f4f6f8; min-height: 100vh; }
+.od-page-header { background: white; padding: 16px; position: sticky; top: 0; z-index: 10; text-align: center; border-bottom: 1px solid #e9ecef; }
+.od-back-button { position: absolute; top: 50%; left: 16px; transform: translateY(-50%); background: none; border: none; cursor: pointer; }
+.od-back-button img { filter: invert(50%); width: 28px; height: 28px; }
+.od-page-header h1 { font-size: 1.1rem; font-weight: 600; margin: 0; }
+.od-page-content { padding: 12px; }
+.od-message { text-align: center; margin-top: 40px; color: #868e96; }
+.od-card { background-color: white; border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+.od-status-section { display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; margin-bottom: 16px; border-bottom: 1px solid #f1f3f5; }
+.od-status-section span { font-size: 0.9rem; color: #868e96; }
+.od-status-section strong { font-size: 0.9rem; font-weight: 600; color: #2ecc71; text-transform: capitalize; }
+.od-product-item { display: flex; gap: 12px; align-items: center; }
+.od-product-item:not(:last-child) { margin-bottom: 16px; }
+.od-product-image { width: 48px; height: 48px; border-radius: 8px; object-fit: cover; }
+.od-product-info { flex-grow: 1; }
+.od-product-name { font-weight: 600; font-size: 0.9rem; margin: 0; }
+.od-product-po-price { font-size: 0.85rem; color: #868e96; margin: 2px 0 0 0; }
+.od-product-po-price span { color: #34495e; font-weight: 500; }
+.od-product-qty { font-size: 0.9rem; font-weight: 500; }
+.od-card h4 { margin: 0 0 8px 0; font-size: 1rem; }
+.od-shipping-option { text-transform: capitalize; }
+.od-shipping-address { font-size: 0.9rem; color: #495057; line-height: 1.5; margin-top: 8px; border-top: 1px solid #f1f3f5; padding-top: 8px; }
+.od-shipping-address p { margin: 0; }
+.od-info-grid, .od-pricing-grid { display: grid; grid-template-columns: 1fr auto; gap: 8px; font-size: 0.9rem; }
+.od-info-grid span, .od-pricing-grid span { color: #868e96; }
+.od-info-grid p, .od-pricing-grid p { margin: 0; text-align: right; font-weight: 600; color: #2c3e50; }
+.od-pricing-grid .sisa-pelunasan { color: #3498db; }
+.od-catatan-text { font-size: 0.9rem; line-height: 1.6; font-style: italic; color: #495057; }
+.od-qr-section { background-color: white; border-radius: 12px; padding: 24px; text-align: center; }
+.od-nomor-resi { font-family: 'Montserrat', sans-serif; font-size: 48px; font-weight: 700; margin-bottom: 16px; letter-spacing: 3px; }
+.od-qr-section p { font-size: 0.9rem; color: #868e96; line-height: 1.5; margin-top: 16px; }
+.od-qr-placeholder { font-size: 1rem; color: #868e96; font-weight: 500; }
+
+.od-product-price {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #28a745; /* Warna hijau yang cerah */
+  margin-top: 4px; /* Memberi sedikit jarak dari nama produk di atasnya */
+}
+
+/* Tambahkan di akhir file */
+.od-po-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+  border-top: 1px solid #f1f3f5;
+  padding-top: 12px;
+}
+
+.od-po-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.od-po-item span {
+  color: #495057;
+  flex: 1;
+}
+
+.od-po-item p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.od-po-pending {
+  color: #adb5bd; /* Warna abu-abu untuk status pending */
+  font-style: italic;
+}
+
+.od-po-ready {
+  color: #3498db; /* Warna biru untuk yang siap dilunasi */
+}
+
+.od-action-card {
+  margin-top: 12px;
+}
+
+.od-pay-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(90deg, #3498db, #2980b9);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-bottom: 12px;
+}
+
+.od-pay-button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}

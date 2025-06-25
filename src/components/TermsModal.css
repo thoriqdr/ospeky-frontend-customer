@@ -1,0 +1,119 @@
+/* src/components/TermsModal.css */
+
+.terms-modal-overlay {
+  position: fixed;
+  inset: 0; /* Cara modern untuk top:0, left:0, right:0, bottom:0 */
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Memaksa konten ke bawah */
+  z-index: 1000;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.terms-modal-content {
+  background-color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  max-height: 80vh; /* Maksimal 80% dari tinggi layar */
+  display: flex;
+  flex-direction: column;
+  /* Menerapkan animasi yang sudah diperbaiki */
+  animation: slide-up-terms 0.3s ease-out;
+}
+
+/* Ganti nama keyframes agar tidak konflik dengan popup lain */
+@keyframes slide-up-terms {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.terms-modal-header {
+  padding: 16px;
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid #e9ecef;
+  flex-shrink: 0; /* Mencegah header menyusut */
+}
+
+.terms-modal-header .back-btn {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.terms-modal-header .back-btn img {
+  filter: invert(50%);
+  width: 24px;
+  height: 24px;
+}
+
+.terms-modal-header h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #2c3e50;
+}
+
+.terms-modal-body {
+  padding: 4px 20px 20px 20px;
+  overflow-y: auto; /* Membuat konten bisa di-scroll */
+  line-height: 1.7;
+  color: #495057;
+}
+
+.terms-modal-body p,
+.terms-modal-body li {
+  text-align: justify;
+}
+
+.terms-modal-body h3 {
+  color: #2c3e50;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.terms-modal-body strong {
+  color: #2c3e50;
+}
+
+.terms-modal-body ol, 
+.terms-modal-body ul {
+  padding-left: 20px;
+}
+
+.terms-modal-footer {
+  padding: 16px;
+  border-top: 1px solid #e9ecef;
+  flex-shrink: 0;
+  background-color: #fff;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.05); /* Shadow halus untuk footer */
+}
+
+.confirm-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.confirm-button:hover {
+  background-color: #0056b3;
+}

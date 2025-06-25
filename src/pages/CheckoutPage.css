@@ -1,0 +1,246 @@
+/* frontend-customer/src/pages/CheckoutPage.css */
+
+/* Import Google Fonts & Icons jika belum ada di index.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
+
+
+.checkout-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding-bottom: 100px; /* Ruang untuk tombol Bayar */
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.checkout-header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.checkout-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.checkout-back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+}
+
+.checkout-back-button img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Shipping Address */
+.shipping-address {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background-color: white;
+  margin-bottom: 12px;
+}
+.address-icon-container .material-icons-outlined {
+    color: var(--primary-color, #007bff);
+}
+.address-details {
+  flex-grow: 1;
+}
+.address-details h4 {
+  margin: 0 0 4px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.address-details .phone-number {
+  font-weight: 500;
+  color: #495057;
+  margin-left: 8px;
+}
+.address-details p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6c757d;
+  line-height: 1.5;
+}
+.address-action .material-icons-outlined {
+    color: #adb5bd;
+    font-size: 28px;
+}
+
+
+/* Shipping Options */
+.shipping-options {
+  padding: 16px;
+  background-color: white;
+  margin-bottom: 12px;
+}
+.shipping-options h4 {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.required-star {
+  color: red;
+  margin-left: 2px;
+}
+.shipping-options label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+.shipping-options input[type="radio"] {
+  margin-right: 10px;
+  accent-color: var(--primary-color, #007bff);
+}
+.shipping-note {
+  font-size: 0.8rem;
+  color: #6c757d;
+  background-color: #f8f9fa;
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+
+/* Order Items */
+.order-items-list {
+  padding: 16px;
+  background-color: white;
+  margin-bottom: 12px;
+}
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.order-item:last-child {
+  margin-bottom: 0;
+}
+.order-item-image {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.order-item-details {
+  flex-grow: 1;
+}
+.order-item-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0 0 4px 0;
+}
+.order-item-price {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary-color, #007bff);
+  margin: 0;
+}
+.order-item-quantity {
+  border: 1px solid #dee2e6;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+
+/* Payment Summary */
+.payment-summary {
+  padding: 16px;
+  background-color: white;
+}
+.payment-summary h4 {
+  margin: 0 0 16px 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: #495057;
+}
+.summary-divider {
+  border: none;
+  border-top: 1px dashed #dee2e6;
+  margin: 16px 0;
+}
+.summary-row.total {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #212529;
+}
+
+
+/* Action Button */
+.checkout-action-button {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  padding: 16px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+  margin: 0 auto;
+  z-index: 20;
+}
+.checkout-action-button button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--primary-color, #007bff);
+  color: white;
+}
+
+.order-notes-section {
+  background-color: white;
+  padding: 16px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.order-notes-section h4 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.order-notes-section textarea {
+  width: 100%;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.order-notes-section .char-counter {
+  text-align: right;
+  font-size: 0.8rem;
+  color: #868e96;
+  margin-top: 4px;
+}

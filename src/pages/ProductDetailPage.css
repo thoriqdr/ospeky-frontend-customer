@@ -1,0 +1,191 @@
+/* src/pages/ProductDetailPage.css (Versi Perbaikan) */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.product-detail-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #f4f6f8;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  padding-bottom: 100px; /* Beri ruang agar tidak tertutup action-buttons */
+}
+
+.detail-back-button {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.detail-back-button img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1); /* Membuat ikon jadi putih */
+}
+
+.image-gallery .main-product-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.image-gallery .swiper-pagination-bullet-active {
+  background-color: white;
+}
+
+.product-details {
+  background-color: white;
+  padding: 20px 16px;
+  border-radius: 0;
+  margin-top: 0px;
+  position: relative;
+  z-index: 2;
+}
+
+.price-sold-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color, #007bff);
+  margin: 0;
+}
+
+.sold-count {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.product-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #ecf0f1;
+  margin: 16px 0;
+}
+
+.variant-selection {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.variant-preview-item {
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 4px;
+  transition: border-color 0.2s;
+}
+
+.variant-preview-item.active {
+  border-color: var(--primary-color, #007bff);
+}
+
+.variant-preview-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.description {
+  margin-top: 16px;
+}
+.description h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.description p {
+  font-size: 0.95rem;
+  color: #34495e;
+  line-height: 1.6;
+}
+
+.action-buttons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 12px 16px;
+  display: flex;
+  gap: 12px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+}
+
+.action-buttons button {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.order-now-btn {
+  background-color: var(--primary-color, #007bff);
+  color: white;
+}
+
+.wish-list-btn {
+  background-color: var(--secondary-color, #eef1f4);
+  color: var(--primary-color, #007bff);
+}
+
+.loading-text {
+  padding: 40px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+/* Tambahkan ini di ProductDetailPage.css */
+
+.price-container {
+  display: flex;
+  flex-direction: column; /* Membuat harga utama dan harga total tersusun ke bawah */
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #007bff;
+  margin: 0;
+  line-height: 1.2; /* Mengatur jarak baris */
+}
+
+.price-total-po {
+  font-size: 0.9rem; /* Ukuran font lebih kecil */
+  font-weight: 500;
+  color: #6c757d; /* Warna abu-abu yang tidak terlalu mencolok */
+  margin: 4px 0 0 0; /* Memberi sedikit jarak dari harga DP di atasnya */
+}
+
+/* ... sisa CSS Anda ... */
