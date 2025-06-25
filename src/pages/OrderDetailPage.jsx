@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getMyOrderById, requestMidtransTransaction } from '../api/api';
+import api, { getMyOrderById, requestMidtransTransaction } from '../api/api';
 import QRCode from 'react-qr-code';
 import { format } from 'date-fns';
 import { id } from 'date-fns/locale';
 import './OrderDetailPage.css';
 import backIcon from '/icons/back-arrow-white.svg';
 
-const API_URL = 'http://localhost:5000';
 
 const OrderDetailPage = () => {
     const { orderId } = useParams();
@@ -130,16 +129,17 @@ const OrderDetailPage = () => {
 
     const getProductImage = (item) => {
         const defaultImage = '/images/default-product.png';
+        const baseUrl = api.defaults.baseURL.replace('/api', ''); // baseURL yang benar
         
         // Logika Fallback untuk Gambar
         if (item.gambarProdukSnapshot) {
-            return `${API_URL}/${item.gambarProdukSnapshot}`;
+            return `${baseUrl}/${item.gambarProdukSnapshot}`; // <- Perbaikan
         }
         if (item.produk?.gambarUrls) {
             try {
                 const images = JSON.parse(item.produk.gambarUrls);
                 if (images.length > 0) {
-                    return `${API_URL}/${images[0]}`;
+                    return `${baseUrl}/${images[0]}`; // <- Perbaikan
                 }
             } catch (e) {
                 return defaultImage;

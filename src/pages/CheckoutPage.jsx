@@ -7,9 +7,8 @@ import { CartContext } from '../context/CartContext';
 import { useNotification } from '../context/NotificationContext.jsx';
 import './CheckoutPage.css';
 import backIcon from '/icons/back-arrow.svg';
-import { getMyAddresses, createOrder, requestMidtransTransaction } from '../api/api';
+import api, { getMyAddresses, createOrder, requestMidtransTransaction } from '../api/api';
 
-const API_URL = 'http://localhost:5000';
 
 const CheckoutPage = () => {
   const navigate = useNavigate();
@@ -300,7 +299,7 @@ const CheckoutPage = () => {
 
           return (
             <div key={index} className="order-item">
-              <img src={`${API_URL}/${item.image}`} alt={displayName} className="order-item-image" />
+              <img src={`${api.defaults.baseURL.replace('/api', '')}/${item.image}`} alt={displayName} className="order-item-image" />
               <div className="order-item-details">
                 <p className="order-item-name">{displayName}</p>
                 <p className="order-item-price">Rp{item.price.toLocaleString('id-ID')}</p>

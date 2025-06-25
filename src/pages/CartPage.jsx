@@ -10,8 +10,8 @@ import './CartPage.css';
 
 import backIcon from '/icons/back-arrow.svg';
 import deleteIcon from '/icons/delete.svg';
+import api from '../api/api';
 
-const API_URL = 'http://localhost:5000';
 
 const CartPage = () => {
   const navigate = useNavigate();
@@ -110,7 +110,7 @@ const CartPage = () => {
               {cartItems.map(item => (
                 <div key={item.variantId} className="cart-item">
                   <input type="checkbox" className="item-checkbox" checked={!!item.selected} onChange={() => toggleItemSelected(item.variantId)} />
-                  <img src={`${API_URL}/${item.image}`} alt={item.name} className="cart-item-image" />
+                  <img src={`${api.defaults.baseURL.replace('/api', '')}/${item.image}`} alt={item.name} className="cart-item-image" />
                   <div className="cart-item-info">
                     <p className="cart-item-name">{item.name}</p>
                     {item.tipeProduk === 'PO_DP' && <p className="cart-item-po-label">Pre-order (DP)</p>}

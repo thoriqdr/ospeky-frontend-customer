@@ -2,10 +2,10 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 
+import api from '../api/api';
 import { useAuth } from '../context/AuthContext';
 import { useModal } from '../context/ModalContext';
 
@@ -15,7 +15,6 @@ import './ProductDetailPage.css';
 import OrderPopup from '../components/OrderPopup';
 import backIcon from '/icons/back-arrow.svg';
 
-const API_URL = 'http://localhost:5000';
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -30,6 +29,7 @@ const ProductDetailPage = () => {
   const [selectedVariant, setSelectedVariant] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [displayImages, setDisplayImages] = useState([]);
+  const baseUrl = api.defaults.baseURL.replace('/api', '');
 
   const swiperRef = useRef(null);
 
@@ -46,7 +46,7 @@ const ProductDetailPage = () => {
   useEffect(() => {
     if (id) {
       setIsLoading(true);
-      axios.get(`/api/products/${id}`)
+      api.get(`/products/${id}`)
         .then(response => {
           const productData = response.data;
 
@@ -123,7 +123,7 @@ const ProductDetailPage = () => {
         >
           {displayImages.map((url, index) => (
             <SwiperSlide key={index}>
-              <img src={`${API_URL}/${url}`} alt={`${product.namaProduk} - Gambar ${index + 1}`} className="main-product-image" />
+              <img src={`${baseUrl}/${url}`} alt={`${product.namaProduk} - Gambar ${index + 1}`} className="main-product-image" />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -161,7 +161,7 @@ const ProductDetailPage = () => {
                 onClick={() => handleVariantSelect(variant)}
               >
                 <img
-                  src={`${API_URL}/${variant.gambarUrl}`}
+                  src={`${baseUrl}/${variant.gambarUrl}`}
                   alt={variant.namaVarian}
                   className="variant-preview-image"
                 />

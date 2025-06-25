@@ -1,22 +1,22 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { requestMidtransTransaction } from '../api/api';
+import api, { requestMidtransTransaction } from '../api/api';
 import { useNotification } from '../context/NotificationContext.jsx';
 import './OrderCard.css';
 
-const API_URL = 'http://localhost:5000';
 
 const OrderItem = ({ item }) => {
   // --- Logika Fallback untuk Nama dan Gambar ---
   const displayName = item.namaProdukSnapshot || item.produk?.namaProduk;
+  const baseUrl = api.defaults.baseURL.replace('/api', '');
 
   let imageUrl = '/images/default-product.png';
   if (item.gambarProdukSnapshot) {
-    imageUrl = `${API_URL}/${item.gambarProdukSnapshot}`;
+    imageUrl = `${baseUrl}/${item.gambarProdukSnapshot}`;
   } else if (item.produk?.gambarUrls) {
     try {
         const images = JSON.parse(item.produk.gambarUrls);
-        if(images.length > 0) imageUrl = `${API_URL}/${images[0]}`;
+        if(images.length > 0) imageUrl = `${baseUrl}/${images[0]}`; // <-- Ganti dengan baseUrl
     } catch(e) {}
   }
   

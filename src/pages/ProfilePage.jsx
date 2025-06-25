@@ -5,13 +5,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import ConfirmationModal from '../components/ConfirmationModal';
 import ChangePasswordModal from '../components/ChangePasswordModal';
-import axios from 'axios';
+import api from '../api/api';
 import './ProfilePage.css';
 
 const ProfilePage = () => {
     const navigate = useNavigate();
     const { currentUser, logout } = useAuth();
-    
+
     const [profileData, setProfileData] = useState({ nama: 'Memuat...' });
     const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
     const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
@@ -20,9 +20,8 @@ const ProfilePage = () => {
         const fetchProfile = async () => {
             if (currentUser) {
                 try {
-                    const token = await currentUser.getIdToken();
-                    const config = { headers: { Authorization: `Bearer ${token}` } };
-                    const { data } = await axios.get('/api/users/profile', config);
+                    // 2. Sederhanakan panggilan API
+                    const { data } = await api.get('/users/profile');
                     setProfileData(data);
                 } catch (error) {
                     console.error("Gagal mengambil profil:", error);
@@ -74,7 +73,7 @@ const ProfilePage = () => {
                     <span>Alamat Saya</span>
                     <span className="material-icons-outlined arrow-icon">chevron_right</span>
                 </Link>
-                
+
                 {/* --- TAMPILKAN MENU GANTI PASSWORD HANYA JIKA PERLU --- */}
                 {hasPasswordProvider && (
                     <div className="profile-menu-item" onClick={() => setIsPasswordModalOpen(true)}>
@@ -88,7 +87,7 @@ const ProfilePage = () => {
                     <span className="material-icons-outlined arrow-icon">chevron_right</span>
                 </div>
             </div>
-            
+
             <ConfirmationModal
                 isOpen={isLogoutModalOpen}
                 onClose={() => setIsLogoutModalOpen(false)}

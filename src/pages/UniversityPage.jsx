@@ -2,21 +2,20 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../api/api';
 import './UniversityPage.css';
 import backIcon from '/icons/back-arrow-white.svg';
 import ProductCard from '../components/ProductCard'; // Impor komponen ProductCard
 
-const API_URL = 'http://localhost:5000';
 
 const UniversityPage = () => {
   const { universityId } = useParams();
   const navigate = useNavigate();
-  
+
   // State untuk data
   const [university, setUniversity] = useState(null);
   const [products, setProducts] = useState([]);
-  
+
   // State untuk UI
   const [activeTab, setActiveTab] = useState('universitas');
   const [isProductsLoading, setIsProductsLoading] = useState(true);
@@ -24,7 +23,7 @@ const UniversityPage = () => {
   // Mengambil data detail universitas
   useEffect(() => {
     if (universityId) {
-      axios.get(`/api/categories/universitas/public/${universityId}`)
+      api.get(`/categories/universitas/public/${universityId}`)
         .then(response => {
           setUniversity(response.data);
         })
@@ -38,7 +37,7 @@ const UniversityPage = () => {
   useEffect(() => {
     if (universityId) {
       setIsProductsLoading(true);
-      axios.get(`/api/products/public?universityId=${universityId}&type=${activeTab}`)
+      api.get(`/products/public?universityId=${universityId}&type=${activeTab}`)
         .then(response => {
           setProducts(response.data);
         })
@@ -56,7 +55,8 @@ const UniversityPage = () => {
     return <div className="loading-text">Loading...</div>;
   }
 
-  const logoUrl = `${API_URL}/${university.logoUrl}`;
+  const logoUrl = `${api.defaults.baseURL.replace('/api', '')}/${university.logoUrl}`;
+
 
   return (
     <div className="uni-page-container">
@@ -72,13 +72,13 @@ const UniversityPage = () => {
 
       <div className="tabs-wrapper">
         <div className="tabs-container">
-          <button 
+          <button
             className={`tab-button ${activeTab === 'universitas' ? 'active' : ''}`}
             onClick={() => setActiveTab('universitas')}
           >
             Ospek Universitas
           </button>
-          <button 
+          <button
             className={`tab-button ${activeTab === 'fakultas' ? 'active' : ''}`}
             onClick={() => setActiveTab('fakultas')}
           >
@@ -86,7 +86,7 @@ const UniversityPage = () => {
           </button>
         </div>
       </div>
-      
+
       <div className="uni-page-content">
         <div className="product-list-container">
           {isProductsLoading ? (

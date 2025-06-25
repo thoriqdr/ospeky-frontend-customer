@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import api from '../api/api'; 
 import './ProductCard.css';
 
-const API_URL = 'http://localhost:5000';
 
 const PriceDisplay = ({ product }) => {
   if (product.isPO) {
@@ -30,6 +30,7 @@ const PriceDisplay = ({ product }) => {
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
+  const baseUrl = api.defaults.baseURL.replace('/api', ''); 
 
   const handleCardClick = () => {
     navigate(`/product/${product.id}`);
@@ -48,7 +49,7 @@ const ProductCard = ({ product }) => {
   };
 
   const imageUrl = product.gambarUrls && product.gambarUrls.length > 0
-    ? `${API_URL}/${product.gambarUrls[0]}`
+    ? `${baseUrl}/${product.gambarUrls[0]}`
     : 'placeholder.jpg';
 
   return (

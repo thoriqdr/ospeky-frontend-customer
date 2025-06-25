@@ -5,15 +5,16 @@ import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { useModal } from '../context/ModalContext';
+import api from '../api/api';
 import './OrderPopup.css';
 
-const API_URL = 'http://localhost:5000';
 
 const OrderPopup = ({ product, selectedVariant: initialVariant, onClose, mode }) => {
   const navigate = useNavigate();
   const { addToCart } = useContext(CartContext);
   const { currentUser } = useAuth();
   const { openAuthModal } = useModal();
+  const baseUrl = api.defaults.baseURL.replace('/api', '');
 
   const [activeVariant, setActiveVariant] = useState(null);
   const [quantity, setQuantity] = useState(1);
@@ -63,7 +64,7 @@ const OrderPopup = ({ product, selectedVariant: initialVariant, onClose, mode })
 
   if (!product || !activeVariant) return null;
 
-  const displayImage = activeVariant?.gambarUrl ? `${API_URL}/${activeVariant.gambarUrl}` : `${API_URL}/${product.gambarUrls[0]}`;
+  const displayImage = activeVariant?.gambarUrl ? `${baseUrl}/${activeVariant.gambarUrl}` : `${baseUrl}/${product.gambarUrls[0]}`;
   const displayPrice = activeVariant?.harga;
   const displayStock = activeVariant?.stok;
   const confirmButtonText = mode === 'beliLangsung' ? 'Lanjut ke Checkout' : 'Tambah ke Keranjang';
@@ -84,7 +85,7 @@ const OrderPopup = ({ product, selectedVariant: initialVariant, onClose, mode })
             <div className="popup-variant-list">
               {product.variants.map(variant => ( variant.namaVarian !== 'Default' && (
                 <div key={variant.id} className={`popup-variant-item ${activeVariant?.id === variant.id ? 'active' : ''}`} onClick={() => handleVariantChange(variant)}>
-                  <img src={`${API_URL}/${variant.gambarUrl}`} alt={variant.namaVarian} className="popup-variant-item-image" />
+                  <img src={`${baseUrl}/${variant.gambarUrl}`} alt={variant.namaVarian} />
                   <span className="popup-variant-item-name">{variant.namaVarian}</span>
                 </div>
               )))}

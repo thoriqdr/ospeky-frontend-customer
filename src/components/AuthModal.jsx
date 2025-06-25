@@ -1,7 +1,7 @@
 // src/components/AuthModal.jsx (Versi Final Lengkap)
 
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api/api';
 import { useAuth } from '../context/AuthContext';
 import { useModal } from '../context/ModalContext';
 import { useNavigate } from 'react-router-dom';
@@ -61,7 +61,7 @@ const AuthModal = () => {
         return;
       }
       try {
-        await axios.post('/api/auth/register', { email, password, nama, nomorHp });
+        await api.post('/auth/register', { email, password, nama, nomorHp });
         await login(email, password);
         closeAuthModal(); // Cukup tutup modal, tidak perlu reload
       } catch (err) {

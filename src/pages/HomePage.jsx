@@ -1,17 +1,16 @@
 // src/pages/HomePage.jsx
 
 import React, { useState, useEffect, useMemo } from 'react';
-import axios from 'axios';
 
 // Impor semua komponen yang dibutuhkan oleh halaman ini
 import ProductCard from '../components/ProductCard';
 import HeaderContent from '../components/HeaderContent';
 import UniversitySlider from '../components/UniversitySlider';
 import ServiceNav from '../components/ServiceNav';
+import api from '../api/api';
 
 import './HomePage.css';
 
-const API_URL = 'http://localhost:5000/api/products/public';
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
@@ -23,7 +22,7 @@ const HomePage = () => {
     const fetchProducts = async () => {
       try {
         setLoading(true); // Selalu set loading true di awal
-        const response = await axios.get(API_URL);
+        const response = await api.get('/products/public');
         setProducts(response.data);
         setError(null); // Bersihkan error jika sukses
       } catch (err) {

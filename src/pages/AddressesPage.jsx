@@ -3,13 +3,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import axios from 'axios';
+import api from '../api/api';
 import './AddressesPage.css';
 
 const AddressesPage = () => {
     const navigate = useNavigate();
     const { currentUser } = useAuth();
-    
+
     // 1. KEMBALIKAN STATE KE KONDISI AWAL
     const [addresses, setAddresses] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -18,24 +18,24 @@ const AddressesPage = () => {
     useEffect(() => {
         const fetchAddresses = async () => {
             if (currentUser) {
-                setLoading(true); // Mulai loading
+                setLoading(true);
+
                 try {
-                    const token = await currentUser.getIdToken();
-                    const config = { headers: { Authorization: `Bearer ${token}` } };
-                    // Memanggil API yang sudah kita buat
-                    const { data } = await axios.get('/api/users/addresses', config);
+                    // Cukup panggil api.get langsung. 
+                    // Token dan header sudah diurus otomatis oleh api.js.
+                    // Juga, hapus '/api' dari path karena sudah ada di baseURL.
+                    const { data } = await api.get('/users/addresses');
                     setAddresses(data);
                 } catch (error) {
                     console.error("Gagal mengambil alamat:", error);
-                    // Jika terjadi error, set alamat menjadi array kosong agar tidak crash
                     setAddresses([]);
                 } finally {
-                    setLoading(false); // Selesai loading
+                    setLoading(false);
                 }
             }
         };
         fetchAddresses();
-    }, [currentUser]); // Dependency tetap pada currentUser
+    }, [currentUser]); // Dependency tetap
 
     return (
         <div className="address-page-wrapper">
@@ -71,7 +71,7 @@ const AddressesPage = () => {
                         </div>
                     ))
                 ) : null}
-                
+
                 <button
                     className="add-address-button"
                     onClick={() => navigate('/profile/addresses/new')}
@@ -83,11 +83,11 @@ const AddressesPage = () => {
                 {/* Pesan kalau tidak ada alamat */}
                 {!loading && addresses.length === 0 && (
                     <p style={{
-                    textAlign: 'center',
-                    color: '#7f8c8d',
-                    marginTop: '16px'
+                        textAlign: 'center',
+                        color: '#7f8c8d',
+                        marginTop: '16px'
                     }}>
-                    Belum ada alamat yang tersimpan.
+                        Belum ada alamat yang tersimpan.
                     </p>
                 )}
 

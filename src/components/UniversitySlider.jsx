@@ -1,7 +1,7 @@
 // src/components/UniversitySlider.jsx
 
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api/api'; 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 // 1. Impor komponen 'Link' dari react-router-dom
@@ -14,18 +14,17 @@ import 'swiper/css/autoplay';
 import './UniversitySlider.css';
 
 // Definisikan URL API dan URL dasar untuk gambar
-const API_URL = 'http://localhost:5000/api/categories/universitas/public';
-const BASE_URL = 'http://localhost:5000';
 
 const UniversitySlider = () => {
   // State untuk menyimpan data universitas dari backend
   const [universities, setUniversities] = useState([]);
+  const baseUrl = api.defaults.baseURL.replace('/api', ''); 
 
   // useEffect untuk mengambil data saat komponen pertama kali dimuat
   useEffect(() => {
     const fetchUniversities = async () => {
       try {
-        const response = await axios.get(API_URL);
+        const response = await api.get('/categories/universitas/public');
         // Simpan data yang diterima ke dalam state
         setUniversities(response.data);
       } catch (error) {
@@ -62,7 +61,7 @@ const UniversitySlider = () => {
             <Link to={`/universitas/${uni.id}`} className="university-item-link">
               <div className="university-item">
                 <img 
-                  src={uni.logoUrl ? `${BASE_URL}/${uni.logoUrl}` : 'https://via.placeholder.com/100?text=?'} 
+                  src={uni.logoUrl ? `${baseUrl}/${uni.logoUrl}` : '...'}
                   alt={uni.nama} 
                 />
               </div>

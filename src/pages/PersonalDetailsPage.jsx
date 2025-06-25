@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import ConfirmationModal from '../components/ConfirmationModal';
-import axios from 'axios';
+import api from '../api/api';
 import './PersonalDetailsPage.css';
 
 const PersonalDetailsPage = () => {
@@ -26,9 +26,9 @@ const PersonalDetailsPage = () => {
         const fetchProfile = async () => {
             if (currentUser) {
                 try {
-                    const token = await currentUser.getIdToken();
-                    const config = { headers: { Authorization: `Bearer ${token}` } };
-                    const { data } = await axios.get('/api/users/profile', config);
+                    setLoading(true);
+                    const { data } = await api.get('/users/profile');
+
                     setProfileData(data);
                     setTempProfileData(data);
                     if (isNewGoogleUser) {
@@ -43,7 +43,10 @@ const PersonalDetailsPage = () => {
                 setLoading(false);
             }
         };
-        fetchProfile();
+
+        fetchProfile(); // 2. Panggil di dalam useEffect
+
+        // 3. Jangan lupa dependency array agar tidak berjalan terus-menerus
     }, [currentUser, isNewGoogleUser]);
 
     // --- Handler Functions ---
@@ -65,10 +68,9 @@ const PersonalDetailsPage = () => {
     const handleConfirmSave = async () => {
         setIsConfirmModalOpen(false);
         try {
-            const token = await currentUser.getIdToken();
-            const config = { headers: { Authorization: `Bearer ${token}` } };
-            const { data } = await axios.patch('/api/users/profile', tempProfileData, config);
-            
+            // Hapus juga logika token dan config di sini.
+            const { data } = await api.patch('/users/profile', tempProfileData);
+
             setProfileData(data.user);
             setIsEditMode(false);
             alert('Perubahan berhasil disimpan!');
@@ -77,7 +79,7 @@ const PersonalDetailsPage = () => {
             alert('Gagal menyimpan perubahan.');
         }
     };
-    
+
     // --- Render Logic ---
     if (loading) {
         return <p style={{ textAlign: 'center', marginTop: '3rem' }}>Memuat...</p>;
@@ -98,7 +100,7 @@ const PersonalDetailsPage = () => {
                     <img src="/icons/back-arrow-white.svg" alt="Kembali" />
                 </button>
                 <h1 className="pd-header-title">Detail Pribadi</h1>
-                <button 
+                <button
                     className={`pd-main-edit-btn ${isEditMode ? 'save' : 'edit'}`}
                     onClick={() => {
                         if (isEditMode) {
@@ -112,7 +114,7 @@ const PersonalDetailsPage = () => {
                     {isEditMode ? 'Simpan' : 'Edit'}
                 </button>
             </header>
-            
+
             <main className="pd-content">
                 {isNewGoogleUser && (
                     <div className="welcome-banner">
@@ -123,7 +125,7 @@ const PersonalDetailsPage = () => {
                     <div className="pd-form-group">
                         <label>Nama</label>
                         {isEditMode ? (
-                            <input type="text" name="nama" className="pd-input" value={tempProfileData.nama} onChange={handleInputChange}/>
+                            <input type="text" name="nama" className="pd-input" value={tempProfileData.nama} onChange={handleInputChange} />
                         ) : (
                             <span className="pd-value">{profileData.nama}</span>
                         )}
@@ -131,7 +133,7 @@ const PersonalDetailsPage = () => {
                     <div className="pd-form-group">
                         <label>Email</label>
                         {isEditMode ? (
-                            <input type="email" name="email" className="pd-input" value={tempProfileData.email} onChange={handleInputChange}/>
+                            <input type="email" name="email" className="pd-input" value={tempProfileData.email} onChange={handleInputChange} />
                         ) : (
                             <span className="pd-value">{profileData.email}</span>
                         )}
@@ -139,7 +141,7 @@ const PersonalDetailsPage = () => {
                     <div className="pd-form-group no-border">
                         <label>Info Kontak</label>
                         {isEditMode ? (
-                            <input type="tel" name="nomorHp" className="pd-input" value={tempProfileData.nomorHp} onChange={handleInputChange} placeholder="Belum diatur"/>
+                            <input type="tel" name="nomorHp" className="pd-input" value={tempProfileData.nomorHp} onChange={handleInputChange} placeholder="Belum diatur" />
                         ) : (
                             <span className="pd-value">{profileData.nomorHp || 'Belum diatur'}</span>
                         )}

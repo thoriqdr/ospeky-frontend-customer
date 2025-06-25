@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'; // Jangan lupa import axios
+import api from '../api/api';
 import './UniversitySearchPage.css';
 import UniversityResultCard from '../components/UniversityResultCard'; // Komponen baru yang akan kita buat
 
@@ -28,7 +28,7 @@ const UniversitySearchPage = () => {
       if (query) {
         setIsLoading(true);
         setInitialSearchDone(true);
-        axios.get(`/api/categories/universitas/public?search=${query}`)
+        api.get(`/categories/universitas/public?search=${query}`)
           .then(response => {
            if (Array.isArray(response.data)) {
               setResults(response.data);

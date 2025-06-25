@@ -1,15 +1,15 @@
 // frontend-customer/src/components/UniversityResultCard.jsx
     
 import React from 'react';
+import api from '../api/api'; 
 import { useNavigate } from 'react-router-dom'; // 1. Impor useNavigate
 import './UniversityResultCard.css';
 
-const API_URL = 'http://localhost:5000'; 
 
 const UniversityResultCard = ({ university }) => {
   const navigate = useNavigate(); // 2. Inisialisasi hook navigasi
-  const fullLogoUrl = `${API_URL}/${university.logoUrl}`;
-
+  const baseUrl = api.defaults.baseURL.replace('/api', '');
+  const fullLogoUrl = `${baseUrl}/${university.logoUrl}`;
   // 3. Buat fungsi untuk menangani klik
   const handleCardClick = () => {
     // Arahkan ke halaman detail dengan ID universitas
