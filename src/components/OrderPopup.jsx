@@ -85,7 +85,7 @@ const OrderPopup = ({ product, selectedVariant: initialVariant, onClose, mode })
             <div className="popup-variant-list">
               {product.variants.map(variant => ( variant.namaVarian !== 'Default' && (
                 <div key={variant.id} className={`popup-variant-item ${activeVariant?.id === variant.id ? 'active' : ''}`} onClick={() => handleVariantChange(variant)}>
-                  <img src={`${baseUrl}/${variant.gambarUrl}`} alt={variant.namaVarian} />
+                  <img src={`${baseUrl}/${variant.gambarUrl}`} alt={variant.namaVarian} className="popup-variant-item-image" />
                   <span className="popup-variant-item-name">{variant.namaVarian}</span>
                 </div>
               )))}
