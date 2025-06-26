@@ -53,10 +53,12 @@
 }
 
 .popup-product-image {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 8px;
+  width: 100%; /* MEMBUAT GAMBAR MEMENUHI LEBAR POPUP */
+  height: 180px; /* MEMBERI TINGGI TETAP AGAR LAYOUT KONSISTEN */
+  object-fit: cover; /* MEMASTIKAN GAMBAR TIDAK PENYANG/GEPENG */
+  border-radius: 12px 12px 0 0; /* Memberi sudut melengkung di atas (opsional) */
+  background-color: #f0f0f0; /* Warna latar jika gambar gagal dimuat */
+  display: block; /* Mencegah spasi ekstra di bawah gambar */
 }
 
 .popup-product-info {
